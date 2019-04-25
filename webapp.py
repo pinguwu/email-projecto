@@ -14,7 +14,7 @@ app.secret_key = os.environ['SECRET_KEY'] #used to sign session cookies
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = ''
+app.config['MAIL_USERNAME'] = 'premixedcloud977@gmail.com'
 app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
@@ -38,11 +38,11 @@ def rendernext1():
 def rendernext2():
 
     messg = "'" + str(request.form['data']) + "'"
-    msg = Message('User Dats', sender = '', recipients = [''])
+    msg = Message('User Dats', sender = 'premixedcloud977@gmail.com', recipients = ['licktenstien@yahoo.com'])
     msg.attach("data.csv", "data/csv" , messg )
 
     mail.send(msg)
-    return render_template('Page2.html' , sent="yes")
+    return render_template('Page1.html' , sent="Your Email Has Been Sent! Thank You for Bettering Human Society!")
 
 
 @app.route('/home',methods=["POST","GET"])
